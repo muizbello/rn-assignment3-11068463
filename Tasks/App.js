@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, ScrollView, StyleSheet, Text, View, Image } from 'react-native';
+import { SafeAreaView, ScrollView, StyleSheet, Text, View, Image, TouchableOpacity, TouchableHighlight, Pressable } from 'react-native';
 import Searchbar from './Components/Searchbar';
+import CategoryCards from './Components/CategoryCards';
 
 export default function App() {
   return (
@@ -16,9 +17,21 @@ export default function App() {
         </View>
         <Image source = {require('./assets/Profile_Image.png')} style={styles.profileimage} />
         </View>
-        <View style={styles.querysection} >
-          <Searchbar/>
-        </View>
+        
+          <View style={styles.querysection} >
+          
+            <TouchableOpacity><Searchbar/></TouchableOpacity>
+            <TouchableOpacity ><Image source={require('./assets/Filter.png')} style={styles.filter}/></TouchableOpacity>
+          </View>
+
+          <View style={styles.categories}>
+            <Text style={styles.third}>Categories</Text>
+            <ScrollView horizontal style={styles.hscroll}>
+            <CategoryCards/>
+            </ScrollView>
+          </View>
+          
+
         </View>
       </ScrollView>
       
@@ -34,6 +47,19 @@ const styles = StyleSheet.create({
     flex: 1,
 
   },
+  third:{
+    fontSize: 29,
+    fontWeight: 'bold',
+  },
+  filter: {
+    marginLeft: 32,
+  
+  },
+  categories:{
+      marginTop: 39,
+      flexDirection: 'row,',
+      marginRight: -20 ,
+  },
   page:{
     margin: 20,
   },
@@ -46,20 +72,25 @@ const styles = StyleSheet.create({
     marginLeft: 105, 
 
   },
+  hscroll:{
+    flexDirection: 'row',
+  },
   usergreeting: {
    marginTop: -10,
    width: 354,
-   height: 152,
+   height: 'auto',
    flex: 1,
    flexDirection: 'row',
+   
   },
   greeting: {
     fontFamily: 'Lato',
     fontSize: 32,
+    fontWeight: 'bold',
   },
   subgreeting: {
     fontFamily: 'Lato',
-    fontSize: 12,
+    fontSize: 13,
   },
   scrollViewContent: {
     flexGrow: 1,
@@ -67,5 +98,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#F7F0E8',
     
   },
-
+  querysection: {
+    backgroundColor: '#FBF9F7',
+    height: 49,
+    marginTop: 20,
+    width: 240,
+    flexDirection: 'row',
+    borderRadius: 9,
+  },
 });
