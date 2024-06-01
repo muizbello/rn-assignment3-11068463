@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView, ScrollView, StyleSheet, Text, View, Image, TouchableOpacity, TouchableHighlight, Pressable } from 'react-native';
 import Searchbar from './Components/Searchbar';
 import CategoryCards from './Components/CategoryCards';
+import OngoingTasks from './Components/OngoingTasks';
 
 export default function App() {
   return (
@@ -30,7 +31,10 @@ export default function App() {
             <CategoryCards/>
             </ScrollView>
           </View>
-          
+          <View>
+            <Text style={styles.third}>Ongoing Tasks</Text>
+            <OngoingTasks/>
+          </View>
 
         </View>
       </ScrollView>
@@ -69,7 +73,7 @@ const styles = StyleSheet.create({
   }, 
   profileimage:{
     marginTop: 4,
-    marginLeft: 105, 
+    marginLeft: 95, 
 
   },
   hscroll:{

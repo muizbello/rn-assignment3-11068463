@@ -39,9 +39,10 @@ const styles = StyleSheet.create({
         height: 192,
         width: 186,
         padding: 10,
-        marginRight: 50,
+        marginRight: 30,
         borderRadius: 10,
         marginTop: 15,
+        marginBottom: 20,
     },
     mini:{
         height: 120,
